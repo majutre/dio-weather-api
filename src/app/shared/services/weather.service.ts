@@ -10,6 +10,7 @@ import { responseToCityWeather, responseToCityDailyWeather } from '../utils/resp
 import { CityWeather, CityDailyWeather } from '../models/weather.model';
 import { AppState } from '../state/app.reducer';
 import { Units } from '../models/units.enum';
+import * as fromConfigSelectors from '../state/config/config.selectors';
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +23,12 @@ export class WeatherService implements OnDestroy {
 
   constructor(private http: HttpClient,
               private store: Store<AppState>) {
-  
+    store
+      .pipe(
+        select(fromConfigSelectors.selectUnitConfig),
+        takeUntil(this.serviceDestroyed$),
+      )
+      .subscribe((unit: Units) => this.unit = unit);
   }
 
   ngOnDestroy() {

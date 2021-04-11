@@ -1,9 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
+import { select, Store } from '@ngrx/store';
 import { Observable, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { select, Store } from '@ngrx/store';
 
 import { BookmarksState } from '../../state/bookmarks.reducer';
 import { Bookmark } from 'src/app/shared/models/bookmark.model';

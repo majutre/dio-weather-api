@@ -3,7 +3,7 @@ import { createAction, props } from '@ngrx/store';
 import { Bookmark } from 'src/app/shared/models/bookmark.model';
 
 export const removeBookmark = createAction(
-  '[Bookmark] Remove Bookmark',
+  '[Bookmarmark] Remove Bookmark',
   props<{ id: number }>(),
 );
 
