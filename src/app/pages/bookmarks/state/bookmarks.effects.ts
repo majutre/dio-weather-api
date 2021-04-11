@@ -1,9 +1,9 @@
 import { Injectable } from "@angular/core";
 
-import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { Store, select } from '@ngrx/store';
 import { of } from 'rxjs';
 import { withLatestFrom, mergeMap, map, catchError } from 'rxjs/operators';
+import { Actions, createEffect, ofType } from '@ngrx/effects';
+import { Store, select } from '@ngrx/store';
 
 import { AppState } from 'src/app/shared/state/app.reducer';
 import { WeatherService } from 'src/app/shared/services/weather.service';
@@ -27,10 +27,12 @@ export class BookmarksEffects {
           .pipe(
             map((cityWeather: CityWeather) => {
               const bookmark = new Bookmark();
+
               bookmark.id = cityWeather.city.id;
               bookmark.coord = cityWeather.city.coord;
               bookmark.name = cityWeather.city.name;
               bookmark.country = cityWeather.city.country;
+              
               return [...bookmarks, bookmark];
             }),
           );
