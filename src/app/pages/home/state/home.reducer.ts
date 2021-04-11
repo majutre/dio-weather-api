@@ -4,10 +4,12 @@ import * as fromHomeActions from './home.actions';
 
 export interface HomeState {
     text: string;
+    text2: string;
 }
 
 export const homeInitialState: HomeState = {
-    text: 'São Paulo'
+    text: 'São Paulo',
+    text2: 'xyz'
 }
 
 const reducer = createReducer(
