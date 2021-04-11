@@ -21,7 +21,7 @@ export class HomeEffects {
             }),
             map((entity: any) => fromHomeActions.loadCurrentWeatherSuccess({ entity }))
         ),
-  //      { useEffectsErrorHandler: true}
+        // { useEffectsErrorHandler: true}
     );
 
     constructor(private actions$: Actions,

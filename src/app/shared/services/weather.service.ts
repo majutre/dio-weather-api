@@ -22,10 +22,10 @@ export class WeatherService implements OnDestroy {
   constructor(private http: HttpClient) {
   }
 
-  // ngOnDestroy() {
-  //   this.serviceDestroyed$.next();
-  //   this.serviceDestroyed$.unsubscribe();
-  // }
+  ngOnDestroy() {
+    this.serviceDestroyed$.next();
+    this.serviceDestroyed$.unsubscribe();
+  }
 
   getCityWeatherByQuery(query: string): Observable<CityWeather> {
     const params = new HttpParams({ fromObject: { q: query } });
