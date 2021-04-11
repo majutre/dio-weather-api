@@ -1,5 +1,6 @@
-import { Weather } from 'src/app/shared/models/weather.model';
 import { Component , ChangeDetectionStrategy, Input } from '@angular/core';
+
+import { Weather } from 'src/app/shared/models/weather.model';
 
 @Component({
   selector: 'jv-detailed-weather',

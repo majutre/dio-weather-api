@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HomePage } from './home.page';
+import { BookmarksPage } from './bookmarks.page';
 
-describe('HomePage', () => {
-  let component: HomePage;
-  let fixture: ComponentFixture<HomePage>;
+describe('BookmarksPage', () => {
+  let component: BookmarksPage;
+  let fixture: ComponentFixture<BookmarksPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HomePage ]
+      declarations: [ BookmarksPage ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HomePage);
+    fixture = TestBed.createComponent(BookmarksPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

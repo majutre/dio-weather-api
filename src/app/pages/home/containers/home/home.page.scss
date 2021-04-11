@@ -7,13 +7,13 @@
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 16px;
 
-    >div {
+    > div {
       width: 100%;
 
-      >div {
+      > div {
         display: flex;
 
-        >.form-control {
+        > .form-control {
           margin-right: 8px;
           flex-grow: 1;
         }
