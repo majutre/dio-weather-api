@@ -1,9 +1,9 @@
 import { Injectable } from "@angular/core";
 
-import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { Store, select } from '@ngrx/store';
 import { of } from 'rxjs';
 import { withLatestFrom, mergeMap, map, catchError } from 'rxjs/operators';
+import { Actions, createEffect, ofType } from '@ngrx/effects';
+import { Store, select } from '@ngrx/store';
 
 import { AppState } from 'src/app/shared/state/app.reducer';
 import { WeatherService } from 'src/app/shared/services/weather.service';
@@ -23,6 +23,7 @@ export class BookmarksEffects {
         if (bookmarks.some(bookmark => bookmark.id === id)) {
           return of(bookmarks.filter(bookmark => bookmark.id !== id));
         }
+
         return this.weatherService.getCityWeatherById(id.toString())
           .pipe(
             map((cityWeather: CityWeather) => {
